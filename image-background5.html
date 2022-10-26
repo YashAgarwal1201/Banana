@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Background 5 (especially for square images)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	html {
+    		width: 100%;
+    		max-height: 100%;
+    	}
+    	.output {
+    		width:  500px;
+    		height: 500px;
+    		background-color: transparent;
+    		position: relative;
+    		margin: 100px auto auto auto;
+    		top: 0; left: 0; right: 0; bottom: 0;
+    	}
+    	.cont {
+    		width: 50%;
+    		height: 50%;
+    		margin:	auto;
+    		background-color: seagreen;
+    		border-radius: 15px;
+    		position: absolute;
+    	}
+    	#c1 {
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		transform: rotate(45deg);
+    	}
+    	#c2 {
+    		width: 30%;
+    		height: 30%;
+    		top: 0;
+    		right: 0;
+    		bottom: 0;
+    		transform: rotate(45deg);
+    		background: radial-gradient(circle, tan 0% 20%, seagreen 20% 100%);
+    	}
+    	#c3 {
+    		width: 45%;
+    		height: 45%;
+    		margin: auto;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		z-index: 10;
+    		background-color: transparent;
+    	}
+    	#c4 {
+    		width: 50%;
+    		height: 50%;
+    		margin: auto;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		z-index: 5;
+    		background-color: tan;
+    	}
+    	#c5 {
+    		width: 30%;
+    		height: 30%;
+    		bottom: 0;
+    		left: 0;
+    		top: 0;
+    		transform: rotate(45deg);
+    		background: radial-gradient(circle, tan 0% 20%, seagreen 20% 100%);
+
+    	}
+    	#c6 {
+    		bottom: 0;
+    		right: 0;
+    		left: 0;
+    		transform: rotate(45deg);
+    	}
+    	.cont img {
+    		width: auto;
+    		height: 100%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		border-radius: 15px;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="output">
+		<div class="cont" id="c1"></div>
+		<div class="cont" id="c2"></div>
+		<div class="cont" id="c3">
+			<img src="main Images/MyImage.png"/>
+		</div>
+		<div class="cont" id="c4"></div>
+		<div class="cont" id="c5"></div>
+		<div class="cont" id="c6"></div>
+	</div>
+	<script>
+		// not important if height and width are given in css styles
+		$(document).ready(function () {
+			//$('.output').css({'width': (40/100) * window.innerWidth, 'height': (40/100) * window.innerWidth})
+			//console.log($('.cont img').width())
+			$('#c4').width($('.cont img').width() + ($('#c4').height() - $('.cont img').height()))
+		})
+	</script>
+</body>
+</html>
