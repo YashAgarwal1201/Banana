@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Background 4 (especially for square images)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	html {
+    		width: 100%;
+    		max-height: 100%;
+    	}
+    	.output {
+    		width:  500px;
+    		height: 500px;
+    		background-color: transparent;
+    		position: relative;
+    		margin: 100px auto auto auto;
+    		top: 0; left: 0; right: 0; bottom: 0;
+    	}
+    	.cont {
+    		width: 40%;
+    		height: 40%;
+    		margin:	auto;
+    		background-color: teal;
+    		border-radius: 15px;
+    	}
+    	#c1 {
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		right: 0;
+    		transform: rotate(45deg);
+    		background-image: linear-gradient(to right, transparent 0% 10%, tan 10% 15%, transparent 15% 100%), 
+						linear-gradient(to bottom, teal 0% 10%, tan 10% 15%, teal 15% 100%);
+    	}
+    	#c2 {
+    		position: absolute;
+    		top: 0;
+    		right: 0;
+    		bottom: 0;
+    		transform: rotate(45deg);
+    		background-image: linear-gradient(to right, transparent 0% 85%, tan 85% 90%, transparent 90% 100%), 
+						linear-gradient(to bottom, teal 0% 10%, tan 10% 15%, teal 15% 100%);
+    	}
+    	#c3 {
+    		width: 45%;
+    		height: 45%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		z-index: 10;
+    		background-color: transparent;
+    	}
+    	#c4 {
+    		width: 50%;
+    		height: 50%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		z-index: -5;
+    		background-color: tan;
+    	}
+    	#c5 {
+    		position: absolute;
+    		bottom: 0;
+    		left: 0;
+    		top: 0;
+    		transform: rotate(45deg);
+    		background-image: linear-gradient(to right, transparent 0% 10%, tan 10% 15%, transparent 15% 100%),
+    							linear-gradient(to bottom, transparent 0% 85%, tan 85% 90%, transparent 90% 100%);
+
+    	}
+    	#c6 {
+    		position: absolute;
+    		bottom: 0;
+    		right: 0;
+    		left: 0;
+    		transform: rotate(45deg);
+    		background-image: linear-gradient(to right, transparent 0% 85%, tan 85% 90%, transparent 90% 100%),
+    							linear-gradient(to bottom, transparent 0% 85%, tan 85% 90%, transparent 90% 100%);
+    	}
+    	.cont img {
+    		width: auto;
+    		height: 100%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		bottom: 0;
+    		right: 0;
+    		border-radius: 15px;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="output">
+		<div class="cont" id="c1"></div>
+		<div class="cont" id="c2"></div>
+		<div class="cont" id="c3">
+			<img src="main Images/MyImage.png"/>
+		</div>
+		<div class="cont" id="c4"></div>
+		<div class="cont" id="c5"></div>
+		<div class="cont" id="c6"></div>
+	</div>
+	<script>
+		// not important if height and width are given in css styles
+		$(document).ready(function () {
+			$('#c4').width($('.cont img').width() + ($('#c4').height() - $('.cont img').height()))
+		})
+	</script>
+</body>
+</html>
