@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Backgrounds (especially for square images)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	html {
+    		width: 100%;
+    		max-height: 100%;
+    	}
+    	.output {
+    		width:  500px;
+    		height: 500px;
+    		background-color: maroon;
+    		position: relative;
+    		margin: 100px auto auto auto;
+    		top: 0; left: 0; right: 0; bottom: 0;
+    		border-radius: 25%;
+    	}
+    	.cont {
+    		width: 50%;
+    		height: 50%;
+    		margin:	auto;
+    		position: absolute;
+    	}
+    	#c1 {
+    		top: 0; left: 0;
+    		transform: rotate(45deg);
+    	}
+    	#c2 {
+    		top: 0; right: 0;
+    	}
+    	#c3 {
+    		width: 45%;
+    		height: 45%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 10;
+    		background-color: transparent;
+    	}
+    	#c4 {
+    		width: 52%;
+    		height: 52%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 5;
+    		background-color: maroon;
+    	}
+    	#c5 {
+    		bottom: 0; left: 0;
+    	}
+    	#c6 {
+    		bottom: 0; right: 0;
+    		transform: rotate(45deg);
+    	}
+    	.cont img {
+    		width: auto;
+    		height: 100%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		border-radius: 15px;
+    	}
+    	#c1, #c6 {
+    		background-color: white;
+    		background-image: radial-gradient(circle, maroon 0% 10%, transparent 10% 100%);
+			background-size: 20% 20%;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="output" id="a1">
+		<div class="cont" id="c1"></div>
+		<div class="cont" id="c2"></div>
+		<div class="cont" id="c3">
+			<img src="main Images/MyImage.png"/>
+		</div>
+		<div class="cont" id="c4"></div>
+		<div class="cont" id="c5"></div>
+		<div class="cont" id="c6"></div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			$('#a1 #c4').width($('#a1 .cont img').width() + ($('#a1 #c4').height() - $('#a1 .cont img').height()))
+		})
+	</script>
+</body>
+</html>
