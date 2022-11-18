@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Background 14 (especially for square images)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	html {
+    		width: 100%;
+    		max-height: 100%;
+    	}
+    	.output {
+    		width:  500px;
+    		height: 500px;
+    		position: relative;
+    		margin: 100px auto auto auto;
+    	}
+    	.cont {
+    		margin:	auto;
+    		position: absolute;
+    		background-color: lawngreen;
+    		border: 5px solid white;
+    	}
+    	#c1 {
+    		width: 60%;
+    		height: 60%;
+    		bottom: 50%; right: 50%;
+    	}
+    	#c2 {
+    		width: 40%;
+    		height: 40%;
+    		bottom: 50%; left: 50%;
+    	}
+    	#c3 {
+    		width: 40%;
+    		height: 40%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 10;
+    		background-color: transparent;
+    		border: none;
+    	}
+    	#c4 {
+    		width: 45%;
+    		height: 45%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 5;
+    		background-color: lawngreen;
+    		border: none;
+    	}
+    	#c5 {
+    		width: 30%;
+    		height: 30%;
+    		top: 50%; right: 50%;
+    	}
+    	#c6 {
+    		width: 50%;
+    		height: 50%;
+    		top: 50%; left: 50%;
+    	}
+    	.cont img {
+    		width: auto;
+    		height: 100%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="output" id="a1">
+		<div class="cont" id="c1"></div>
+		<div class="cont" id="c2"></div>
+		<div class="cont" id="c3">
+			<img src="main Images/MyImage.png"/>
+		</div>
+		<div class="cont" id="c4"></div>
+		<div class="cont" id="c5"></div>
+		<div class="cont" id="c6"></div>
+	</div>
+	<script>
+		// not important if height and width are given in css styles
+		$(document).ready(function () {
+			$('#a1 #c4').width($('#a1 .cont img').width() + ($('#a1 #c4').height() - $('#a1 .cont img').height()))
+			$('[id ^= "c"').mouseover((event) => {
+				if (event.target.matches('#c1')) {
+					$('#c1').css({'width': '30%', 'height': '30%'})
+					$('#c2').css({'width': '60%', 'height': '60%'})
+					$('#c5').css({'width': '40%', 'height': '40%'})
+					$('#c6').css({'width': '50%', 'height': '50%'})
+				}
+				else if (event.target.matches('#c2')) {
+					$('#c1').css({'width': '50%', 'height': '50%'})
+					$('#c2').css({'width': '30%', 'height': '30%'})
+					$('#c5').css({'width': '40%', 'height': '40%'})
+					$('#c6').css({'width': '60%', 'height': '60%'})
+				}
+				else if (event.target.matches('#c5')) {
+					$('#c1').css({'width': '60%', 'height': '60%'})
+					$('#c2').css({'width': '40%', 'height': '40%'})
+					$('#c5').css({'width': '30%', 'height': '30%'})
+					$('#c6').css({'width': '50%', 'height': '50%'})
+				}
+				else if (event.target.matches('#c6')) {
+					$('#c1').css({'width': '50%', 'height': '50%'})
+					$('#c2').css({'width': '40%', 'height': '40%'})
+					$('#c5').css({'width': '60%', 'height': '60%'})
+					$('#c6').css({'width': '30%', 'height': '30%'})
+				}
+				else {
+
+				}
+			})
+		})
+	</script>
+</body>
+</html>
