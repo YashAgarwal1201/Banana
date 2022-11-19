@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Background 16 (especially for square images)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	html {
+    		width: 100%;
+    		max-height: 100%;
+    	}
+    	.output {
+    		width:  500px;
+    		height: 500px;
+    		position: relative;
+    		margin: 100px auto auto auto;
+    	}
+    	.cont {
+    		width: 50%;
+    		height: 50%;
+    		margin:	auto;
+    		position: absolute;
+    		background-color: palegreen;
+    		border: 5px solid white;
+    	}
+    	#c1 {
+    		bottom: 0%; right: 0%;
+    		background: conic-gradient(at bottom right, transparent 0deg 270deg , palegreen 270deg 295deg, transparent 295deg 302deg, palegreen 302deg 327deg, transparent 327deg 335deg, palegreen 335deg 360deg);
+    		border-top-left-radius: 0%;
+    	}
+    	#c2 {
+    		bottom: 0%; left: 0%;
+    		background: conic-gradient(at bottom left, palegreen 0deg 25deg, transparent 25deg 32deg, palegreen 32deg 57deg, transparent 57deg 65deg, palegreen 65deg 90deg, transparent 90deg 360deg);
+    		border-top-right-radius: 0%;
+    	}
+    	#c3 {
+    		width: 40%;
+    		height: 40%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 10;
+    		background-color: transparent;
+    		border: none;
+    	}
+    	#c4 {
+    		width: 45%;
+    		height: 45%;
+    		margin: auto;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    		z-index: 5;
+    		background-color: darkolivegreen;
+    		border: none;
+    	}
+    	#c5 {
+    		top: 0%; right: 0%;
+    		background: conic-gradient(at top right, transparent 0deg 180deg, palegreen 180deg 205deg, transparent 205deg 212deg, palegreen 212deg 237deg, transparent 237deg 245deg, palegreen 245deg 270deg, transparent 270deg 360deg);
+    		border-bottom-left-radius: 0%;
+    	}
+    	#c6 {
+    		top: 0; left: 0%;
+    		background: conic-gradient(at top left, transparent 0deg 90deg , palegreen 90deg 115deg, transparent 115deg 122deg, palegreen 122deg 147deg, transparent 147deg 155deg, palegreen 155deg 180deg, transparent 180deg 360deg);
+    		border-bottom-right-radius: 0%;
+    	}
+    	.cont img {
+    		width: auto;
+    		height: 100%;
+    		margin: auto;
+    		position: absolute;
+    		top: 0; left: 0; bottom: 0; right: 0;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="output" id="a1">
+		<div class="cont" id="c1"></div>
+		<div class="cont" id="c2"></div>
+		<div class="cont" id="c3">
+			<img src="c1.png"/>
+		</div>
+		<div class="cont" id="c4"></div>
+		<div class="cont" id="c5"></div>
+		<div class="cont" id="c6"></div>
+	</div>
+	<script>
+		// not important if height and width are given in css styles
+		$(document).ready(function () {
+			$('#a1 #c4').width($('#a1 .cont img').width() + ($('#a1 #c4').height() - $('#a1 .cont img').height()))
+		})
+	</script>
+</body>
+</html>
