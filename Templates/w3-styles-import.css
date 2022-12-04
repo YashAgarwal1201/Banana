@@ -8,3 +8,7 @@
 @import url(https://www.w3schools.com/lib/w3-colors-2018.css);
 @import url(https://www.w3schools.com/lib/w3-colors-2017.css);
 @import url(https://www.w3schools.com/lib/w3-colors-2020.css);
+
+/* import of google font icons */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons+Outlined);
