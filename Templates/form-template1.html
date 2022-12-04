@@ -23,7 +23,7 @@
 	</style>
 </head>
 <body class="w3-2017-greenery w3-display-container">
-	<div class="w3-container w3-2017-flame w3-card-4 w3-third w3-round-xlarge w3-display-middle w3-mobile form-container">
+	<div id="form1" class="w3-container w3-2017-flame w3-card-4 w3-third w3-round-xlarge w3-display-middle w3-mobile form-container">
 		<h1>Login Please...</h1>
 		<form onsubmit="(event) => {event.preventDefault()}" class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-24">
 			<div class="w3-panel">
@@ -41,7 +41,37 @@
 		</form>
 		<section class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-16">
 			<p>Forgot Password? <a onclick="$('#alert-id1').show()"><u>Click to reset</u></a></p>
-			<p>Not Registered? <a><u>Click to register</u></a></p>
+			<p>Not Registered? <a onclick="$('#form2').show(); $('#form1').hide();"><u>Click to register</u></a></p>
+		</section>
+	</div>
+
+	<div id="form2" class="w3-container w3-2017-flame w3-card-4 w3-third w3-round-xlarge w3-display-middle w3-mobile form-container" style="display: none;">
+		<h1>Register Here...</h1>
+		<form onsubmit="(event) => {event.preventDefault()}" class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-24">
+			<div class="w3-panel">
+				<label for="Name">Your Name</label><br/>
+				<input type="text" name="Name" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce" />
+			</div>
+			<div class="w3-panel">
+				<label for="Email">Your Email</label><br/>
+				<input type="email" name="Email" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce" />
+			</div>
+			<div class="w3-panel">
+				<label for="Password">Your Password</label><br/>
+				<input type="password" name="Password" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce"/>
+			</div>
+			<div class="w3-panel">
+				<label for="Password">Confirm Your Password</label><br/>
+				<input type="password" name="Password" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce"/>
+			</div>
+			<div class="w3-panel w3-center w3-section">
+				<button type="submit" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">send</i></button>
+				<button type="reset" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">delete</i></button>
+			</div>
+		</form>
+		<section class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-16">
+			<p>Forgot Password? <a onclick="$('#alert-id1').show()"><u>Click to reset</u></a></p>
+			<p>Already Registered? <a onclick="$('#form1').show(); $('#form2').hide();"><u>Click to login</u></a></p>
 		</section>
 	</div>
 	<div id="alert-id1" class="w3-panel w3-card-4 w3-padding-16 w3-display-middle w3-2017-flame w3-round" style="display: none; width: 100%;">
