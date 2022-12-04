@@ -1,3 +1,3 @@
 # Banana
 
-Image backgrounds and borders using HTML, CSS & Javascript (or, jquery).
+Image backgrounds (or, borders) and templates using HTML, CSS (including w3.css) & Javascript (including jquery).
