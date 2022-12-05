@@ -15,10 +15,26 @@
 			width: 100%; max-height: 100%; height: 100%;
 		}
 		.form-container {
-			width: 500px;
+			width: 50%
 		}
 		.form-container button {
-			width: 70px; height: 70px;
+			width: 100%; height: 100%;
+		}
+		.form-container tr {
+			height: 50px;
+		}
+		.form-container td {
+			height: 100%;
+		}
+		@media screen and (max-width: 1000px) {
+			.form-container {
+				width: 80%;
+			}
+		}
+		@media screen and (max-width: 600px) {
+			.form-container {
+				width: 90%;
+			}
 		}
 	</style>
 </head>
@@ -26,54 +42,131 @@
 	<div id="form1" class="w3-container w3-2021-inkwell w3-card-4 w3-third w3-round-xlarge w3-display-middle w3-mobile form-container">
 		<h1>Login Please...</h1>
 		<form onsubmit="(event) => {event.preventDefault()}" class="w3-panel w3-2021-ultimate-gray w3-card-4 w3-round w3-padding-24">
-			<div class="w3-panel">
-				<label for="Email">Your Email</label><br/>
-				<input type="email" name="Email" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce" />
-			</div>
-			<div class="w3-panel">
-				<label for="Password">Your Password</label><br/>
-				<input type="password" name="Password" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce"/>
-			</div>
-			<div class="w3-panel w3-center w3-section">
-				<button type="submit" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">send</i></button>
-				<button type="reset" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">delete</i></button>
-			</div>
+			<table class="w3-table">
+				<tr class="">
+					<td class="w3-right">
+						<label for="Email">E-mail</label>
+					</td>
+					<td>
+						<input type="email" name="Email" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">
+						<label for="Password">Password</label>
+					</td>
+					<td>
+						<input type="password" name="Password" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">Delete</td>
+					<td></td>
+					<td>
+						<button type="submit" class="w3-button  w3-padding w3-2021-inkwell"><i class="material-icons">send</i></button>
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">Discard</td>
+					<td></td>
+					<td>
+						<button type="reset" class="w3-button  w3-padding w3-2021-inkwell"><i class="material-icons">delete</i></button>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="w3-right">
+						Forgot Passowrd?
+					</td>
+					<td>
+						<a onclick="$('#alert-id1').show()"><u>Click to reset</u></a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="w3-right">
+						Not Registered?
+					</td>
+					<td>
+						<a onclick="$('#form2').show(); $('#form1').hide();"><u>Click to register</u></a>
+					</td>
+				</tr>
+			</table>
 		</form>
-		<section class="w3-panel w3-2021-desert-mist w3-card-4 w3-round w3-padding-16">
-			<p>Forgot Password? <a onclick="$('#alert-id1').show()"><u>Click to reset</u></a></p>
-			<p>Not Registered? <a onclick="$('#form2').show(); $('#form1').hide();"><u>Click to register</u></a></p>
-		</section>
 	</div>
 
 	<div id="form2" class="w3-container w3-2021-inkwell w3-card-4 w3-third w3-round-xlarge w3-display-middle w3-mobile form-container" style="display: none;">
 		<h1>Register Here...</h1>
-		<form onsubmit="(event) => {event.preventDefault()}" class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-24">
-			<div class="w3-panel">
-				<label for="Name">Your Name</label><br/>
-				<input type="text" name="Name" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce" />
-			</div>
-			<div class="w3-panel">
-				<label for="Email">Your Email</label><br/>
-				<input type="email" name="Email" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce" />
-			</div>
-			<div class="w3-panel">
-				<label for="Password">Your Password</label><br/>
-				<input type="password" name="Password" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce"/>
-			</div>
-			<div class="w3-panel">
-				<label for="Password">Confirm Your Password</label><br/>
-				<input type="password" name="Password" class="w3-border-bottom w3-border-red w3-input w3-2017-shaded-spruce"/>
-			</div>
-			<div class="w3-panel w3-center w3-section">
-				<button type="submit" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">send</i></button>
-				<button type="reset" class="w3-button w3-circle w3-padding-24 w3-2017-flame"><i class="material-icons">delete</i></button>
-			</div>
+		<form onsubmit="(event) => {event.preventDefault()}" class="w3-panel w3-2021-ultimate-gray w3-card-4 w3-round w3-padding-24">
+			<table class="w3-table">
+				<tr class="">
+					<td class="w3-right">
+						<label for="Name">Name</label>
+					</td>
+					<td>
+						<input type="text" name="Name" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr class="">
+					<td class="w3-right">
+						<label for="Email">E-mail</label>
+					</td>
+					<td>
+						<input type="email" name="Email" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">
+						<label for="Password">Password</label>
+					</td>
+					<td>
+						<input type="password" name="Password" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">
+						<label for="Password">Confirm<br>Password</label>
+					</td>
+					<td>
+						<input type="password" name="Password" class="w3-input w3-2021-ultimate-gray">
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">Delete</td>
+					<td></td>
+					<td>
+						<button type="submit" class="w3-button  w3-padding w3-2021-inkwell"><i class="material-icons">send</i></button>
+					</td>
+				</tr>
+				<tr>
+					<td class="w3-right">Discard</td>
+					<td></td>
+					<td>
+						<button type="reset" class="w3-button  w3-padding w3-2021-inkwell"><i class="material-icons">delete</i></button>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="w3-right">
+						Forgot Passowrd?
+					</td>
+					<td>
+						<a onclick="$('#alert-id1').show()"><u>Click to reset</u></a>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="w3-right">
+						Already Registered?
+					</td>
+					<td>
+						<a onclick="$('#form1').show(); $('#form2').hide();"><u>Click to Login</u></a>
+					</td>
+				</tr>
+			</table>
 		</form>
-		<section class="w3-panel w3-2017-shaded-spruce w3-card-4 w3-round w3-padding-16">
-			<p>Forgot Password? <a onclick="$('#alert-id1').show()"><u>Click to reset</u></a></p>
-			<p>Already Registered? <a onclick="$('#form1').show(); $('#form2').hide();"><u>Click to login</u></a></p>
-		</section>
 	</div>
+
 	<div id="alert-id1" class="w3-panel w3-card-4 w3-padding-16 w3-display-middle w3-2021-buttercream w3-round" style="display: none; width: 100%;">
 		<h3>Alert!</h3>
 		<p>OoPs, this ain't going to work, mate.</p>
