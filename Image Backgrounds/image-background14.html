@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Image Background 14 (especially for square images)</title>
+	<title>Image Backgrounds (especially for square images)</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <style type="text/css">
@@ -80,7 +80,7 @@
 		<div class="cont" id="c1"></div>
 		<div class="cont" id="c2"></div>
 		<div class="cont" id="c3">
-			<img src="main Images/MyImage.png"/>
+			<img src="Test Poster.jpg"/>
 		</div>
 		<div class="cont" id="c4"></div>
 		<div class="cont" id="c5"></div>
@@ -89,6 +89,8 @@
 	<script>
 		// not important if height and width are given in css styles
 		$(document).ready(function () {
+			//$('.output').css({'width': (40/100) * window.innerWidth, 'height': (40/100) * window.innerWidth})
+			//console.log($('.cont img').width())
 			$('#a1 #c4').width($('#a1 .cont img').width() + ($('#a1 #c4').height() - $('#a1 .cont img').height()))
 			$('[id ^= "c"').mouseover((event) => {
 				if (event.target.matches('#c1')) {
