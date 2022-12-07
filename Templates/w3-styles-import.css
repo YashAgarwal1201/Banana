@@ -20,7 +20,7 @@
 h1, h2, h3, i, iframe {
 	font-family: 'Signika Negative', sans-serif; 
 }
-p, button, a, span, summary, details, label, ul, li, div, content *, section { 
+p, button, a, span, summary, details, label, ul, li, div, content, section { 
 	font-family: 'Fresca', sans-serif;
 	font-size: 20px;
 }

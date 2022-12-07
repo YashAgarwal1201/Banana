@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Image Background1 (especially for square images)</title>
+	<link rel="stylesheet" type="text/css" href="./../Templates/w3-styles-import.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <style type="text/css">
@@ -13,13 +14,15 @@
     	}
     	html {
     		width: 100%;
-    		margin: 0px;
+    		max-height: 100%;
     	}
     	.output {
-    		/*width:  600px;
-    		height:  600px;*/
+    		width:  500px;
+    		height: 500px;
     		background-color: transparent;
     		position: relative;
+    		margin: 100px auto auto auto;
+    		top: 0; left: 0; right: 0; bottom: 0;
     	}
     	.cont {
     		width: 50%;
@@ -85,7 +88,7 @@
 	<script>
 		// not important if height and width are given in css styles
 		$(document).ready(function () {
-			$('.output').css({'width': (40/100) * window.innerWidth, 'height': (40/100) * window.innerWidth})
+			//$('.output').css({'width': (40/100) * window.innerWidth, 'height': (40/100) * window.innerWidth})
 			//console.log($('.cont img').width())
 			$('#a1 #c4').width($('#a1 .cont img').width() + ($('#a1 #c4').height() - $('#a1 .cont img').height()))
 		})

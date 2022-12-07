@@ -13,7 +13,7 @@
 		}
 		html, body {
 			scroll-behavior: smooth;
-			width: 100%; height: 100%; max-height: 100%;
+			width: 100%; height: 100%; min-height: 100%;
 		}
 		#section1-id {
 			width: 100%; max-height: fit-content;
@@ -39,17 +39,16 @@
 	</style>
 </head>
 <body>
-	<h1>Designs</h1>
+	<h2 class="w3-text-teal">Designs</h2>
 	<section id="main-part">
 		<div class="w3-margin-top" id="section1-id">
-			<div class="w3-mobile w3-round-xxlarge w3-padding-large w3-2019-paloma">Items</div>
+			<div class="w3-mobile w3-round-xxlarge w3-padding-large w3-text-white w3-teal">Items</div>
 			<div class="nav-btns w3-mobile"></div>
 		</div>
 
 		<div class="w3-container w3-padding-16 w3-margin" id="section2-id">
 			<section class="w3-panel w3-padding w3-display-container">
-				<h2></h2>
-				<!--span>Content</span-->
+				<h3 class="w3-text-deep-orange"></h3>
 			</section>
 			<section class="w3-panel" id="iframe-section-id"></section>
 		</div>
@@ -72,13 +71,13 @@
 			let pathArr = []
 			for (const [key, values] of Object.entries(designFiles)) {
 				$('<button>', {
-					class: "w3-button w3-round-xxlarge w3-padding-large w3-border w3-center",
+					class: "w3-button w3-round-xxlarge w3-padding-large w3-border w3-text-teal w3-border-teal w3-hover-light-blue w3-center",
 					id: 'btn-'+ key +'-id'
 				}).text(values.idd).click((event) => {
-					$('.nav-btns button').removeClass('w3-2019-vanilla-custard')
+					$('.nav-btns button').removeClass('w3-teal w3-text-white')
 					$('#iframe-content-id').prop('src', values.path)
-					$('#section2-id section h2').text(`${values.idd}`)
-					$(event.target).addClass('w3-2019-vanilla-custard')
+					$('#section2-id section h3').text(`${values.idd}`)
+					$(event.target).addClass('w3-teal w3-text-white')
 				}).appendTo('.nav-btns')
 				pathArr.push(values.path)
 			}
@@ -86,7 +85,7 @@
 				id: 'iframe-content-id',
 				src: pathArr[0]
 			}).appendTo('#iframe-section-id')
-			$('#section2-id section h2').text(`${designFiles[0].idd}`)
+			$('#section2-id section h3').text(`${designFiles[0].idd}`)
 
 			var root = document.getElementById('iframe-content-id')
 			var rootY = (root.contentWindow || root.contentDocument)
@@ -95,7 +94,7 @@
 			}
 			//$(rootY.body + '[class = output]').css('width')
 			//rootY.body.style.textAlign = 'center'
-			let docHeight = $(document).innerHeight() - ($('h1').innerHeight() + $('#section1-id').innerHeight())
+			let docHeight = $(document).innerHeight() - ($('h2').innerHeight() + $('#section1-id').innerHeight())
 			$(rootY).outerHeight()
 			if(docHeight)
 				root.style.height = docHeight+'px'
