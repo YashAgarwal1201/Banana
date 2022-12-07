@@ -87,17 +87,8 @@
 			}).appendTo('#iframe-section-id')
 			$('#section2-id section h3').text(`${designFiles[0].idd}`)
 
-			var root = document.getElementById('iframe-content-id')
-			var rootY = (root.contentWindow || root.contentDocument)
-			if (rootY.document) {
-				rootY = rootY.document
-			}
-			//$(rootY.body + '[class = output]').css('width')
-			//rootY.body.style.textAlign = 'center'
-			let docHeight = $(document).innerHeight() - ($('h2').innerHeight() + $('#section1-id').innerHeight())
-			$(rootY).outerHeight()
-			if(docHeight)
-				root.style.height = docHeight+'px'
+			let docHeight = $(document).innerHeight() 
+			document.getElementById('iframe-content-id').style.height = docHeight+'px'
 		}
 		main()
 	</script>
