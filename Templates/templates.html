@@ -15,8 +15,15 @@
 			scroll-behavior: smooth;
 			width: 100%; height: 100%; max-height: 100%;
 		}
-		.nav-btns {
+		#section1-id {
 			width: 100%;
+			height: fit-content;
+		}
+		#section1-id section {
+			width: 150px;
+		}
+		.nav-btns {
+			width: calc(100% - 150px);
 			white-space: nowrap;
 			overflow-x: auto;
 		}::-webkit-scrollbar {
@@ -30,7 +37,7 @@
 			background: none;
 			border: none;
 		}
-		summary, .nav-btns button {
+		.nav-btns button {
 			margin: 17px 7px 0px 0px;
 			min-width: 100px;
 			width: fit-content;
@@ -39,24 +46,26 @@
 </head>
 <body class="w3-2019-evening-blue">
 	<h1>Designs</h1>
-	<div class="w3-panel" style="white-space: nowrap;" id="section1-id">
-		<content class="w3-round-xxlarge w3-padding-large w3-2019-paloma w3-center">qwerty</content>
-		<nav class="nav-btns"></nav>
+	<div class="w3-margin-top w3-container w3-bar" id="section1-id">
+		<section class="w3-left">
+			<content class="w3-round-xxlarge w3-padding-large w3-2019-paloma w3-mobile">Items</content>
+		</section>
+		<nav class="nav-btns w3-right w3-mobile"></nav>
 	</div>
 
 	<div class="w3-container w3-padding-16 w3-2019-guacamole w3-margin" id="section2-id">
 		<section class="w3-panel w3-padding w3-display-container">
-			<h2>Heading</h2>
-			<span>Content</span>
+			<h2></h2>
+			<!--span>Content</span-->
 		</section>
 		<section class="w3-panel" id="iframe-section-id"></section>
 	</div>
 	<script>
 		var designFiles = []
-		for (let i = 1; i <= 21; i++) { // for image backgrounds
+		for (let i = 0; i < 21; i++) { // for image backgrounds
 			designFiles[i] = {
-				path : './../Image Backgrounds/image-background' + i.toString() +'.html',
-				idd : 'Image Background' + i.toString()
+				path : './../Image Backgrounds/image-background' + (i+1).toString() +'.html',
+				idd : 'Image Background ' + (i+1).toString()
 			}
 		}
 		for (var i = 1; i <= 2; i++) { // for templates
@@ -71,8 +80,11 @@
 				$('<button>', {
 					class: "w3-button w3-round-xxlarge w3-padding-large w3-border w3-center",
 					id: 'btn-'+ key +'-id'
-				}).text(values.idd).click(() => {
+				}).text(values.idd).click((event) => {
+					$('.nav-btns button').removeClass('w3-2019-vanilla-custard')
 					$('#iframe-content-id').prop('src', values.path)
+					$('#section2-id section h2').text(`${values.idd}`)
+					$(event.target).addClass('w3-2019-vanilla-custard')
 				}).appendTo('.nav-btns')
 				pathArr.push(values.path)
 			}
@@ -80,6 +92,7 @@
 				id: 'iframe-content-id',
 				src: pathArr[0]
 			}).appendTo('#iframe-section-id')
+			$('#section2-id section h2').text(`${designFiles[0].idd}`)
 
 			var root = document.getElementById('iframe-content-id')
 			var rootY = (root.contentWindow || root.contentDocument)
@@ -88,7 +101,6 @@
 			}
 			let docHeight = $(document).innerHeight() - ($('h1').innerHeight() + $('#section1-id').innerHeight())
 			$(rootY).outerHeight()
-			console.log(docHeight)
 			if(docHeight)
 				root.style.height = docHeight+'px'
 		}
