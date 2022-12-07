@@ -12,3 +12,36 @@
 /* import of google font icons */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons+Outlined);
+
+/* import of google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fresca&family=\
+	Signika+Negative:wght@300&family=Spline+Sans+Mono:wght@300&display=swap');
+
+h1, h2, h3, i, iframe {
+	font-family: 'Signika Negative', sans-serif; 
+}
+p, button, a, span, summary, details, label, ul, li, div, content *, section { 
+	font-family: 'Fresca', sans-serif;
+	font-size: 20px;
+}
+input::placeholder, textarea::placeholder, input, textarea {
+	font-family: 'Spline Sans Mono', monospace;
+}
+h1 {
+	font-size: 70px;
+}
+h2 {
+	font-size: 50px;
+}
+h3 {
+	font-size: 35px;
+}
+h4 {
+	font-size: 25px;
+}
+h5 {
+	font-size: 17;
+}
+h6 {
+	font-size: 10px;
+}
